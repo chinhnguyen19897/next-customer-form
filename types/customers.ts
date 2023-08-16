@@ -1,5 +1,3 @@
-type Status = 'active' | 'deactivated'
-
 export interface ICustomerInfo {
     id: string;
     code: string;
@@ -8,7 +6,7 @@ export interface ICustomerInfo {
     groupCustomer: string;
     debtAmount: number;
     totalAmount: number;
-    createdAt: string;
-    status: Status;
+    createdAt: Date;
+    status: string;
     quantity: number;
 }

@@ -1,4 +1,4 @@
-import {faker} from "@faker-js/faker";
+import {faker} from "@faker-js/faker/locale/vi";
 import {ICustomerInfo} from "../types/customers";
 
 
@@ -7,12 +7,12 @@ const generateFakeCustomer = (): ICustomerInfo => {
         id: faker.string.uuid(),
         code: faker.string.numeric(),
         fullName: faker.person.fullName(),
-        phoneNumber: faker.phone.number(),
-        groupCustomer: faker.helpers.arrayElement(['guest', 'member']),
+        phoneNumber: faker.phone.number('09#######'),
+        groupCustomer: faker.helpers.arrayElement(['Khách lẻ', 'Thành viên']),
         debtAmount: faker.number.int(0),
         totalAmount: faker.number.int(0),
         createdAt: faker.date.anytime(),
-        status: faker.helpers.arrayElement(['active', 'deactivated',]),
+        status: faker.helpers.arrayElement(['Đang hoạt động', 'Không hoạt động',]),
         quantity: faker.number.int(100)
     }
 }

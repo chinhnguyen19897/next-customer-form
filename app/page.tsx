@@ -8,6 +8,7 @@ import TableList from "./components/TableList";
 import {createColumnHelper} from "@tanstack/table-core";
 import moment from "moment/moment";
 import {ColumnDef} from "@tanstack/react-table";
+import Link from "next/link";
 
 const columnHelper = createColumnHelper<ICustomerInfo>();
 
@@ -28,7 +29,7 @@ const Page = () => {
                 header: 'Mã khách hàng'
             }),
             columnHelper.accessor('fullName', {
-                cell: (info) => info.getValue(),
+                cell: (info) => <Link href={`./customer/${info.row.id + 1}`}>{info.getValue()}</Link>,
                 filterFn: 'testFilter',
                 header: 'Tên khách hàng'
             }),
